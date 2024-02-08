@@ -22,6 +22,12 @@ public class Product {
      */
     public Product(String productName, int productCode, double unitCost, boolean inCurrentProductLine) {
        setProductCode(productCode);
+         if (productName != null){
+            if (productName.length() <= 20)
+                this.productName = productName;
+            else
+                this.productName = productName.substring(0,20);
+        }
        this.productName = productName;
        this.unitCost = unitCost;
        this.inCurrentProductLine = inCurrentProductLine;
