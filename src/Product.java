@@ -21,7 +21,6 @@ public class Product {
      * @param unitCost Unit cost of the product - valid values are any positive number
      */
     public Product(String productName, int productCode, double unitCost, boolean inCurrentProductLine) {
-
         setProductCode(productCode);
 
         if (productName != null){
@@ -30,12 +29,8 @@ public class Product {
             else
                 this.productName = productName.substring(0,20);
         }
-
         this.productName = productName;
-
-        setUnitCost(unitCost);
-        this.inCurrentProductLine = inCurrentProductLine;
-
+       this.unitCost = unitCost;
        this.inCurrentProductLine = inCurrentProductLine;
     }
 
@@ -88,21 +83,14 @@ public class Product {
      * @param productName The new Product Name
      */
     public void setProductName(String productName) {
-            if (productName != null){
-                if (productName.length() <= 20){
-                    this.productName = productName;
-                }
-            }
+            this.productName = productName;
+    }
     /**
      * Updates the Unit Cost to the value passed as a parameter
      * @param unitCost The new unit cost for the product
      */
     public void setUnitCost(double unitCost) {
-        if ((unitCost > 0) && (unitCost <= 99999)){
             this.unitCost = unitCost;
-        }
-    }
-
     }
     /**
      * Updates the boolean indicating whether the product is in the current product line or not.
@@ -126,4 +114,3 @@ public class Product {
     }
 
 }
-
