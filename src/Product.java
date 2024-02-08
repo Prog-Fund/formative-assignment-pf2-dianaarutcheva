@@ -5,13 +5,13 @@
  */
 public class Product {
 
-    private String productName = "";   // max length = 20 characters, default value is "".
+    private String productName ;    // max length = 20 characters, default value is "".
                                     // When constructor is called, if the name is >20 chars, you should
                                     // only store the first 20 characters (Hint: use substr())
 
-    private int productCode = 5000;  // valid values 1000 - 5000 inclusive - default value is 5000
+    private int productCode ;  // valid values 1000 - 5000 inclusive - default value is 5000
 
-    private double unitCost = 1;  //valid values are any positive number - default to 1
+    private double unitCost;  //valid values are any positive number - default to 1
 
     private boolean inCurrentProductLine;   // no validation required. Default
     /**
@@ -21,17 +21,9 @@ public class Product {
      * @param unitCost Unit cost of the product - valid values are any positive number
      */
     public Product(String productName, int productCode, double unitCost, boolean inCurrentProductLine) {
-        setProductCode(productCode);
-
-        if (productName != null){
-            if (productName.length() <= 20)
-                this.productName = productName;
-            else
-                this.productName = productName.substring(0,20);
-        }
-        this.productName = productName;
+       this.productName = productName;
+       this.productCode = productCode;
        this.unitCost = unitCost;
-       this.inCurrentProductLine = inCurrentProductLine;
     }
 
     //-------
@@ -73,10 +65,7 @@ public class Product {
      * @param productCode The new Product Code
      */
     public void setProductCode(int productCode) {
-        if ((productCode >= 1000) && (productCode <= 5000)) {
             this.productCode = productCode;
-        }
-
     }
     /**
      * Updates the Product Name to the value passed as a parameter
@@ -105,12 +94,11 @@ public class Product {
      * @return Details of the specific product
      */
     public String toString()
+    //  The toString should return a String in the form e.g:
+    //  "Product description: Flatscreen TV  product code: 2000  unit cost: 1000 and currently in product line: Y"
 
     {
-        return "Product description: " + productName
-                + ", product code: " + productCode
-                + ", unit cost: " + unitCost
-                + ", currently in product line: " + (inCurrentProductLine ? 'Y' : 'N');
+        return "TO DO WRITE TOSTRING";
     }
 
 }
