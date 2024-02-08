@@ -21,8 +21,8 @@ public class Product {
      * @param unitCost Unit cost of the product - valid values are any positive number
      */
     public Product(String productName, int productCode, double unitCost, boolean inCurrentProductLine) {
-       this.productName = productName;
-       this.productCode = productCode;
+        setProductCode(productCode);
+        this.productName = productName;
        this.unitCost = unitCost;
        this.inCurrentProductLine = inCurrentProductLine;
     }
@@ -66,7 +66,9 @@ public class Product {
      * @param productCode The new Product Code
      */
     public void setProductCode(int productCode) {
+        if ((productCode >= 1000) && (productCode <= 5000)) {
             this.productCode = productCode;
+        }
     }
     /**
      * Updates the Product Name to the value passed as a parameter
