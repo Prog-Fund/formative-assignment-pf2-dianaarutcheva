@@ -11,7 +11,7 @@ public class Product {
 
     private int productCode = 5000;  // valid values 1000 - 5000 inclusive - default value is 5000
 
-    private double unitCost = 1;  //valid values are any positive number - default to 1
+    private double unitCost = 1000;  //valid values are any positive number - default to 1
 
     private boolean inCurrentProductLine;   // no validation required. Default
     /**
