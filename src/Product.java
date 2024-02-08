@@ -5,13 +5,13 @@
  */
 public class Product {
 
-    private String productName ;    // max length = 20 characters, default value is "".
+    private String productName = "";   // max length = 20 characters, default value is "".
                                     // When constructor is called, if the name is >20 chars, you should
                                     // only store the first 20 characters (Hint: use substr())
 
-    private int productCode ;  // valid values 1000 - 5000 inclusive - default value is 5000
+    private int productCode = 2000;  // valid values 1000 - 5000 inclusive - default value is 5000
 
-    private double unitCost;  //valid values are any positive number - default to 1
+    private double unitCost = 1000;  //valid values are any positive number - default to 1
 
     private boolean inCurrentProductLine;   // no validation required. Default
     /**
@@ -24,6 +24,7 @@ public class Product {
        this.productName = productName;
        this.productCode = productCode;
        this.unitCost = unitCost;
+       this.inCurrentProductLine = inCurrentProductLine;
     }
 
     //-------
@@ -94,11 +95,12 @@ public class Product {
      * @return Details of the specific product
      */
     public String toString()
-    //  The toString should return a String in the form e.g:
-    //  "Product description: Flatscreen TV  product code: 2000  unit cost: 1000 and currently in product line: Y"
 
     {
-        return "TO DO WRITE TOSTRING";
+        return "Product description: " + productName
+                + ", product code: " + productCode
+                + ", unit cost: " + unitCost
+                + ", currently in product line: " + (inCurrentProductLine ? 'Y' : 'N');
     }
 
 }
